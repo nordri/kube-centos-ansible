@@ -1,0 +1,21 @@
+---
+- hosts: all
+  roles:
+    - ntp
+
+- hosts: master
+  roles:
+    - repository
+    - etcd
+    - kubernetes
+    - kube-apiserver
+
+- hosts: workers
+  roles:
+    - repository
+    - kubernetes
+    - kubelet
+
+- hosts: all
+  roles:
+    - flannel

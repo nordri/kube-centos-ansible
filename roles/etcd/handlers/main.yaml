@@ -1,0 +1,13 @@
+---
+- name: restart etcd
+  command: /bin/true
+  notify:
+    - stop etcd
+    - start etcd
+
+- name: start etcd
+  service: name=etcd state=started enabled=yes
+
+- name: stop etcd
+  service: name=etcd state=stopped enabled=yes
+

@@ -1,0 +1,10 @@
+---
+# List of variables
+flannel_key: kube-centos
+flannel_ip: 172.30.0.0
+flannel_prefix: 16
+flannel_host_prefix: 24
+flannel_backend: vxlan
+flannel_config_file: /tmp/flannel-conf.json
+master_name: master
+

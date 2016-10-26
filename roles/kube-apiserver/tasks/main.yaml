@@ -1,0 +1,6 @@
+- name: Configuring Kubernetes Apiserver
+  template:
+    src: "kubernetes_apiserver.j2"
+    dest: /etc/kubernetes/apiserver
+  notify: Start Kubernetes API Server
+

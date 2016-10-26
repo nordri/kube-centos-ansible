@@ -1,0 +1,10 @@
+---
+- name: Installing ETCD
+  yum: name=etcd state=latest
+
+- name: Configuring ETCD
+  template:
+    src: "etcd_config.j2"
+    dest: /etc/etcd/etcd.conf
+  notify: restart etcd
+

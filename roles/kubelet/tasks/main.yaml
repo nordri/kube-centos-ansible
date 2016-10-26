@@ -1,0 +1,7 @@
+---
+- name: Configuring Kubelet
+  template:
+    src: "kubernetes_kubelet.j2"
+    dest: /etc/kubernetes/kubelet
+  notify:
+    - Start the appropriate services on workers

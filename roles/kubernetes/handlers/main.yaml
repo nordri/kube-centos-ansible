@@ -1,0 +1,10 @@
+---
+- name: Start the appropriate services on master
+  service: name={{ item }} state=started enabled=yes
+  with_items:
+    - etcd
+    - kube-apiserver 
+    - kube-controller-manager
+    - kube-scheduler
+    - docker
+

@@ -1,0 +1,4 @@
+---
+- name: Start Kubernetes API Server
+  service: name=kube-apiserver state=started enabled=yes
+

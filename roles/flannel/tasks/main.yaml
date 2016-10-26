@@ -1,0 +1,27 @@
+---
+- name: Installing Flannel
+  yum: name=flannel state=latest
+
+- name: Creating the directory
+  shell: /usr/bin/etcdctl mkdir /{{ flannel_key }}/network
+  when: inventory_hostname in groups['master'] 
+
+- name: Create flannel config file to go in etcd
+  template: src=flannel-conf.j2 dest={{ flannel_config_file }}
+  when: inventory_hostname in groups['master']
+
+- name: Load the flannel config file into etcd
+  shell: "/usr/bin/etcdctl --no-sync set /{{ flannel_key }}/network/config < {{ flannel_config_file }}"
+  when: inventory_hostname in groups['master']
+
+- name: Clean up the flannel config file
+  file: path={{ flannel_config_file }} state=absent
+  when: inventory_hostname in groups['master']
+
+- name: Configuring Docker Kubernetes
+  template:
+    src: "flannel-docker.j2"
+    dest: /etc/sysconfig/flanneld
+  notify:
+    - Starting flannel
+
