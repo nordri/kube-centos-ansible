@@ -1,0 +1,6 @@
+[master]
+master
+
+[workers]
+minion1
+minion2
