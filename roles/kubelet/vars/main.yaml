@@ -1,2 +1,5 @@
 ---
 master_name: master
+cluster_dns: 10.254.0.3
+cluster_domain: cluster.local
+

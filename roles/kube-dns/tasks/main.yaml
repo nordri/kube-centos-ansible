@@ -1,0 +1,16 @@
+---
+- name: creating work directory
+  command: mkdir -p /etc/kubernetes/kube-addons
+
+- name: Creating DNS Replication Controller for Kubernetes
+  template:
+    src: "kube-dns-rc.j2"
+    dest: /etc/kubernetes/kube-addons/kube-dns-rc.yaml
+
+- name: Creating DNS Service for Kubernetes
+  template:
+    src: "kube-dns-svc.j2"
+    dest: /etc/kubernetes/kube-addons/kube-dns-srv.yaml
+  notify:
+    - making dns service on master
+

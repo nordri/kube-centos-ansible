@@ -1,0 +1,7 @@
+---
+dns_replicas: 1
+dns_domain: cluster.local
+#kube_master_url: {{ ansible_default_ipv4.address }}
+kube_master_port: 8080
+cluster_ip: 10.254.0.3
+

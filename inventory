@@ -4,3 +4,13 @@ master
 [workers]
 minion1
 minion2
+
+#[databases]
+#mysqlserver
+#
+#[fileservers]
+#nfsserver
+
+#[proxyservers]
+#nginx-server
+

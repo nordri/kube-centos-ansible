@@ -1,0 +1,14 @@
+---
+- name: making dns service on master
+  command: /bin/true
+  notify:
+    - create dns rc
+    - create dns srv
+
+- name: create dns rc
+  command: /usr/bin/kubectl create -f /etc/kubernetes/kube-addons/kube-dns-rc.yaml
+
+- name: create dns srv
+  command: /usr/bin/kubectl create -f /etc/kubernetes/kube-addons/kube-dns-srv.yaml
+
+

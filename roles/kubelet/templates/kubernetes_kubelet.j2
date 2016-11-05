@@ -11,4 +11,4 @@ KUBELET_HOSTNAME="--hostname-override={{ ansible_hostname }}"
 KUBELET_API_SERVER="--api-servers=http://{{ master_name }}:8080"
 
 # Add your own!
-KUBELET_ARGS=""
+KUBELET_ARGS=" --cluster-dns={{ cluster_dns }} --cluster-domain={{ cluster_domain }} "
