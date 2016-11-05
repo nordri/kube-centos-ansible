@@ -17,7 +17,7 @@ When your environment is ready:
 
 `ansible-playbook -i inventory play.yaml`
 
-## Otros Roles
+## 3rd Party Roles
 
 ntp role by resmo/ansible-role-ntp forked from bennojoy/ntp
 
