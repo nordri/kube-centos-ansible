@@ -15,7 +15,7 @@ As usual for Ansible you need ssh access without password to all machines and ea
 
 When your environment is ready:
 
-`ansible-playbook -i inventory play.yaml
+`ansible-playbook -i inventory play.yaml`
 
 ## Otros Roles
 
