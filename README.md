@@ -1,17 +1,21 @@
-Kubernetes sobre CentOS con Ansible
-===================================
+Building Kubernetes over CentOS with Ansible
+============================================
 
-Este repo está en fase beta. Se ha seguido la guía de CentOS en la documentación oficial de Kubernetes para automatizar el despliegue.
+This is a small attempt to build Kubernetes with Ansible. I'm learning about both so is a practical experiment for me.
+
+I test everything before push but if you find a typo, mistake or want to say something please go ahead.
+
+I followed the Kubernetes over CentOS from the official page:
 
 http://kubernetes.io/docs/getting-started-guides/centos/centos_manual_config/
 
-Se utilizan los nombres de maquina que sugiere la guia.
+I also tried to use as many env vars as I can. So take a look to vars/ dir in each role to fix your pretensions.
 
-Para utilizarlo preparar una máquina CentOS de master y otras maquinas CentOS como workers. 
+As usual for Ansible you need ssh access without password to all machines and each one have to resolve the others.
 
-Cuando esté todo listo
+When your environment is ready:
 
-ansible-playbook -i inventory play.yaml
+`ansible-playbook -i inventory play.yaml
 
 ## Otros Roles
 
